@@ -12,7 +12,9 @@ enum Entrypoint {
         
         let app = try await Application.make(env)
         
-        let transport = VaporTransport(routesBuilder: app)
+        let requestInjectionMiddleware = OpenAPIRequestInjectionMiddleware()
+        let transport = VaporTransport(routesBuilder: app.grouped(requestInjectionMiddleware))
+        
         let handler = OpenAPIController()
         try handler.registerHandlers(on: transport, serverURL: Servers.server1())
 
