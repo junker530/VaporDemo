@@ -25,4 +25,3 @@ swift test
 - [Vapor Documentation](https://docs.vapor.codes)
 - [Vapor GitHub](https://github.com/vapor)
 - [Vapor Community](https://github.com/vapor-community)
-# VaporDemo
